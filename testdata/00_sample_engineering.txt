@@ -1,0 +1,58 @@
+# Sample Stellaris Technology File - Engineering
+# This is an example for testing purposes
+
+tech_basic_industry = {
+	cost = 0
+	area = engineering
+	tier = 0
+	start_tech = yes
+	category = { industry }
+
+	weight = 100
+}
+
+tech_space_construction = {
+	cost = 1000
+	area = engineering
+	tier = 1
+	category = { industry }
+	prerequisites = { "tech_basic_industry" }
+	weight = 90
+}
+
+tech_starbase_2 = {
+	cost = 2500
+	area = engineering
+	tier = 2
+	category = { voidcraft }
+	prerequisites = { "tech_space_construction" }
+	weight = 80
+}
+
+tech_starbase_3 = {
+	cost = 5000
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_starbase_2" }
+	weight = 70
+}
+
+tech_mega_engineering = {
+	cost = 15000
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_starbase_3" "tech_zero_point_power" }
+	weight = 30
+}
+
+tech_zero_point_power = {
+	cost = 8000
+	area = engineering
+	tier = 3
+	category = { industry }
+	prerequisites = { "tech_space_construction" }
+	weight = 65
+}

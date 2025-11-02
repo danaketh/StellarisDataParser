@@ -1,0 +1,49 @@
+# Sample Stellaris Technology File - Society
+# This is an example for testing purposes
+
+tech_colonization_1 = {
+	cost = 0
+	area = society
+	tier = 0
+	start_tech = yes
+	category = { new_worlds }
+
+	weight = 100
+}
+
+tech_gene_banks = {
+	cost = 1500
+	area = society
+	tier = 1
+	category = { biology }
+	prerequisites = { "tech_colonization_1" }
+	weight = 80
+}
+
+tech_gene_expressions = {
+	cost = 3000
+	area = society
+	tier = 2
+	category = { biology }
+	prerequisites = { "tech_gene_banks" }
+	weight = 70
+}
+
+tech_genetic_engineering = {
+	cost = 6000
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_gene_expressions" }
+	weight = 60
+}
+
+tech_synthetic_leaders = {
+	cost = 10000
+	area = society
+	tier = 4
+	is_rare = yes
+	category = { biology }
+	prerequisites = { "tech_genetic_engineering" }
+	weight = 25
+}

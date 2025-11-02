@@ -1,0 +1,112 @@
+# Complex Technology Test File
+# Tests advanced parsing features
+
+tech_gestalt_only = {
+	cost = 5000
+	area = society
+	tier = 2
+	category = { psionics }
+	is_gestalt = yes
+	prerequisites = { "tech_basic_science_lab_1" }
+	weight = 50
+
+	potential = {
+		is_gestalt = yes
+	}
+
+	weight_modifiers = {
+		factor = 2.0
+		add = 100
+	}
+}
+
+tech_megacorp_special = {
+	cost = 8000
+	area = engineering
+	tier = 3
+	category = { industry }
+	is_megacorp = yes
+	is_rare = yes
+	prerequisites = { "tech_gestalt_only" }
+	weight = 40
+	base_weight = 1.5
+
+	feature_unlocks = {
+		"feature_corporate_buildings"
+		"feature_branch_offices"
+	}
+}
+
+tech_event_based = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { computing }
+	is_event_tech = yes
+	weight = 0
+}
+
+tech_reverse_engineering = {
+	cost = 10000
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	is_reverse_engineerable = yes
+	is_rare = yes
+	weight = 30
+
+	potential = {
+		OR = {
+			has_technology = "tech_alien_life_studies"
+			has_country_flag = "reverse_engineer_available"
+		}
+	}
+}
+
+tech_machine_empire = {
+	cost = 3000
+	area = engineering
+	tier = 1
+	category = { industry }
+	is_machine_empire = yes
+	prerequisites = { "tech_basic_science_lab_1" }
+	weight = 80
+
+	ai_update_type = "military"
+	gateway = "ftl"
+}
+
+tech_hive_mind = {
+	cost = 4000
+	area = society
+	tier = 2
+	category = { biology }
+	is_hive_empire = yes
+	prerequisites = { "tech_machine_empire" }
+	weight = 70
+}
+
+tech_with_complex_potential = {
+	cost = 15000
+	area = physics
+	tier = 5
+	category = { particles }
+	is_dangerous = yes
+	prerequisites = { "tech_reverse_engineering" }
+	weight = 25
+
+	potential = {
+		AND = {
+			is_gestalt = no
+			NOT = {
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+			has_technology = "tech_jump_drive_1"
+		}
+	}
+
+	weight_modifiers = {
+		factor = 0.5
+		add = 50
+	}
+}

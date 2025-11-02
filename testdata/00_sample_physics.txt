@@ -1,0 +1,69 @@
+# Sample Stellaris Technology File
+# This is an example for testing purposes
+
+tech_basic_science_lab_1 = {
+	cost = 0
+	area = physics
+	tier = 0
+	start_tech = yes
+	category = { computing }
+
+	weight = 100
+}
+
+tech_powered_exoskeletons = {
+	cost = 2000
+	area = physics
+	tier = 1
+	category = { materials }
+	prerequisites = { "tech_basic_science_lab_1" }
+	weight = 85
+}
+
+tech_plasma_1 = {
+	cost = 4000
+	area = physics
+	tier = 2
+	category = { particles }
+	prerequisites = { "tech_powered_exoskeletons" }
+	weight = 75
+}
+
+tech_plasma_2 = {
+	cost = 8000
+	area = physics
+	tier = 3
+	category = { particles }
+	prerequisites = { "tech_plasma_1" }
+	weight = 65
+}
+
+tech_jump_drive_1 = {
+	cost = 12000
+	area = physics
+	tier = 4
+	is_rare = yes
+	category = { particles }
+	prerequisites = { "tech_plasma_2" "tech_hyperspace_theory" }
+	weight = 35
+}
+
+tech_hyperspace_theory = {
+	cost = 6000
+	area = physics
+	tier = 2
+	category = { field_manipulation }
+	prerequisites = { "tech_powered_exoskeletons" }
+	weight = 70
+}
+
+tech_psi_jump_drive_1 = {
+	cost = 20000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_dangerous = yes
+	category = { particles }
+	prerequisites = { "tech_jump_drive_1" }
+	weight = 20
+}
