@@ -1,0 +1,31 @@
+{
+  "areas": [
+    "engineering",
+    "physics",
+    "society"
+  ],
+  "categories": [
+    "archaeostudies",
+    "biology",
+    "computing",
+    "field_manipulation",
+    "industry",
+    "materials",
+    "military_theory",
+    "new_worlds",
+    "particles",
+    "propulsion",
+    "psionics",
+    "statecraft",
+    "voidcraft"
+  ],
+  "maxLevel": 8,
+  "tiers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}
