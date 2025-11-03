@@ -6,6 +6,7 @@ A Go console application that parses Stellaris technology and localization files
 
 - **Automated Parsing**: Reads Stellaris technology files in the game's native format
 - **English Localization**: Extracts English names and descriptions for all technologies
+- **Variable Resolution**: Automatically resolves localization variable references (e.g., `$building_name$`)
 - **Dependency Resolution**: Automatically builds the complete dependency tree
 - **JSON Export**: Generates structured JSON files organized by research area
 - **Icon Conversion**: Converts technology icons from DDS to PNG format
@@ -154,6 +155,8 @@ The `metadata.json` file contains:
    - Reads Stellaris YAML localization files
    - Extracts English technology names and descriptions
    - Handles special characters and escape sequences
+   - Resolves variable references recursively (e.g., `$BOARDING_CABLES$` → `Boarding Cables`)
+   - Supports nested variable references to ensure all placeholders are replaced
 
 2. **Technology Parser** (`lib/parser`):
    - Reads Stellaris technology files (.txt)
@@ -268,11 +271,25 @@ const areas = metadata.areas;
 - For example: `tech_lasers_1` becomes "Lasers 1"
 - Point to the game root directory to include localization
 
+### Technologies showing placeholder values like "$VARIABLE_NAME$"
+
+- This typically means the localization file is incomplete or a referenced variable is missing
+- The parser automatically resolves variable references, but if a referenced variable doesn't exist in the localization files, it will remain as-is
+- Ensure you're using the latest Stellaris game data
+- Check that all localization files in `localisation/english/` are present and accessible
+
 ## Dependencies
 
 - [github.com/lukegb/dds](https://github.com/lukegb/dds) - DDS image format decoder
 
 ## Version History
+
+### v1.0.1 (Current)
+- Added recursive variable resolution for localization references
+- Fixed issue where technology names showed placeholders like `$BOARDING_CABLES$`
+- Supports nested variable references (e.g., `$var1$` → `$var2$` → `Final Value`)
+- Added comprehensive unit tests for localization variable resolution
+- Improved documentation for localization features
 
 ### v1.0.0
 - Initial release

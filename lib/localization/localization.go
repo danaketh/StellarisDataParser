@@ -142,7 +142,7 @@ func (p *LocalizationParser) parseFile(filePath string, language string) error {
 func (p *LocalizationParser) GetLocalizedName(techKey string, language string) string {
 	if langData, ok := p.data.Languages[language]; ok {
 		if name, ok := langData.Translations[techKey]; ok {
-			return name
+			return p.resolveVariables(name, language)
 		}
 	}
 	return ""
@@ -153,7 +153,7 @@ func (p *LocalizationParser) GetLocalizedDescription(techKey string, language st
 	descKey := techKey + "_desc"
 	if langData, ok := p.data.Languages[language]; ok {
 		if desc, ok := langData.Translations[descKey]; ok {
-			return desc
+			return p.resolveVariables(desc, language)
 		}
 	}
 	return ""
@@ -201,4 +201,51 @@ func (p *LocalizationParser) GetAllTranslations() map[string]map[string]map[stri
 // GetData returns the raw localization data
 func (p *LocalizationParser) GetData() *LocalizationData {
 	return p.data
+}
+
+// resolveVariables recursively resolves variable references in localized strings
+// Variables are in the format $variable_name$ and reference other localization keys
+func (p *LocalizationParser) resolveVariables(text string, language string) string {
+	// Keep track of visited keys to prevent infinite loops
+	visited := make(map[string]bool)
+
+	return p.resolveVariablesRecursive(text, language, visited, 0)
+}
+
+// resolveVariablesRecursive is the recursive helper function
+func (p *LocalizationParser) resolveVariablesRecursive(text string, language string, visited map[string]bool, depth int) string {
+	// Prevent infinite recursion
+	if depth > 10 {
+		return text
+	}
+
+	// Pattern to match $variable_name$
+	varPattern := regexp.MustCompile(`\$([a-zA-Z0-9_]+)\$`)
+
+	// Find all variable references
+	result := varPattern.ReplaceAllStringFunc(text, func(match string) string {
+		// Extract variable name (remove $ signs)
+		varName := match[1 : len(match)-1]
+
+		// Check if we've already visited this key to prevent loops
+		if visited[varName] {
+			return match
+		}
+
+		// Mark as visited
+		visited[varName] = true
+
+		// Look up the variable value
+		if langData, ok := p.data.Languages[language]; ok {
+			if value, ok := langData.Translations[varName]; ok {
+				// Recursively resolve any variables in the value
+				return p.resolveVariablesRecursive(value, language, visited, depth+1)
+			}
+		}
+
+		// If variable not found, return the original match
+		return match
+	})
+
+	return result
 }

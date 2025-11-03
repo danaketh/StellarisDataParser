@@ -189,7 +189,7 @@
       "area": "society",
       "category": "archaeostudies",
       "cost": 0,
-      "description": "$tech_archeology_lab_desc$",
+      "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
       "icon": "tech_archeology_lab",
       "isDangerous": false,
       "isEvent": false,
@@ -202,7 +202,7 @@
       "key": "tech_archeology_lab_ancrel",
       "level": 0,
       "levels": 0,
-      "name": "$tech_archeology_lab$",
+      "name": "Curator Archaeology Lab",
       "prerequisites": [],
       "sourceFile": "00_ancient_relics_tech.txt",
       "tier": 2,
@@ -258,7 +258,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$job_healthcare_desc$",
+      "description": "A micro-unit of prevention is worth a macro-unit of cure. Sometimes, however, both are needed.",
       "icon": "tech_basic_health",
       "isDangerous": false,
       "isEvent": false,
@@ -534,7 +534,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_executive_retreat_desc$",
+      "description": "A luxurious resort complex for high ranking corporate officers. Here they can sample the local planetary culture in a high security environment.",
       "icon": "tech_executive_retreat",
       "isDangerous": false,
       "isEvent": false,
@@ -580,7 +580,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_fe_clinic_1_desc$",
+      "description": "Molecular-Revitalization Institutes delve deep into cellular intricacies to amplify the effectiveness of medical treatments, significantly improving the quality and longevity of the populations' health.",
       "icon": "tech_fe_clinic_1",
       "isDangerous": true,
       "isEvent": false,
@@ -593,7 +593,7 @@
       "key": "tech_fe_clinic_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_clinic_1$",
+      "name": "Molecular-Revitalization Institute",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -603,7 +603,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_sky_dome_desc$",
+      "description": "This floating city, propelled by state-of-the-art anti-gravity technology, provides an idyllic haven for its inhabitants.",
       "icon": "tech_fe_dome_1",
       "isDangerous": true,
       "isEvent": false,
@@ -616,7 +616,7 @@
       "key": "tech_fe_dome_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_sky_dome$",
+      "name": "Sky Dome",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -626,7 +626,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_entertainment_1_desc$",
+      "description": "These immense entertainment sectors are at the forefront of recreation and leisure. Brainwave readers allow for instantaneous and personalized virtual getaways.",
       "icon": "tech_fe_entertainment_1",
       "isDangerous": true,
       "isEvent": false,
@@ -639,7 +639,7 @@
       "key": "tech_fe_entertainment_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_entertainment_1$",
+      "name": "Virtual Bliss Plaza",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -649,7 +649,7 @@
       "area": "society",
       "category": "military_theory",
       "cost": 0,
-      "description": "$building_fe_fortress_desc$",
+      "description": "This colossal planetary defense complex has numerous armories and layers of shielding. Only a highly specialized siege force could breach its defenses.",
       "icon": "tech_fe_fortress_1",
       "isDangerous": true,
       "isEvent": false,
@@ -662,7 +662,7 @@
       "key": "tech_fe_fortress_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_fortress$",
+      "name": "Aspis Bastion",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -672,7 +672,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_market_1_desc$",
+      "description": "Dominating the skyline, these towering spires cast shadows across the bustling trade districts below.",
       "icon": "tech_fe_market_1",
       "isDangerous": true,
       "isEvent": false,
@@ -685,7 +685,7 @@
       "key": "tech_fe_market_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_market_1$",
+      "name": "Galactic Commerce Hub",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -695,7 +695,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_nourishment_complex_desc$",
+      "description": "Replication technology swiftly conjures up novel flavors on command.",
       "icon": "tech_fe_nourishment_1",
       "isDangerous": true,
       "isEvent": false,
@@ -708,7 +708,7 @@
       "key": "tech_fe_nourishment_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_nourishment_complex$",
+      "name": "Nourishment Complex",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -718,7 +718,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_security_1_desc$",
+      "description": "This massive judicial complex seamlessly intertwines courts and law enforcement.",
       "icon": "tech_fe_security_1",
       "isDangerous": true,
       "isEvent": false,
@@ -731,7 +731,7 @@
       "key": "tech_fe_security_1",
       "level": 0,
       "levels": 0,
-      "name": "$building_fe_security_1$",
+      "name": "Justice Complex",
       "prerequisites": [],
       "sourceFile": "00_fallen_empire_tech.txt",
       "tier": 0,
@@ -892,7 +892,7 @@
       "key": "tech_growth_chamber_2",
       "level": 0,
       "levels": 0,
-      "name": "Advanced $tech_growth_chamber_1$",
+      "name": "Advanced Growth Chamber",
       "prerequisites": [],
       "sourceFile": "00_biogenesis_tech.txt",
       "tier": 4,
@@ -1063,7 +1063,7 @@
       "area": "society",
       "category": "military_theory",
       "cost": 30000,
-      "description": "$building_lathe_cogitator_desc$",
+      "description": "Calculating hyperspatial supply chains is complex. Rerouting some processing power to the task will help even the largest fleet to delve deeper into enemy territory.",
       "icon": "tech_lathe_cogitator",
       "isDangerous": false,
       "isEvent": false,
@@ -1076,7 +1076,7 @@
       "key": "tech_lathe_cogitator",
       "level": 0,
       "levels": 0,
-      "name": "$building_lathe_cogitator$",
+      "name": "Synaptic Cogitator",
       "prerequisites": [],
       "sourceFile": "00_machine_age_tech.txt",
       "tier": 5,
@@ -1086,7 +1086,7 @@
       "area": "society",
       "category": "biology",
       "cost": 30000,
-      "description": "$building_lathe_life_support_desc$",
+      "description": "Dedicated facilities organize the maintenance of the Lathe's critical components, allowing us to support more chips and a healthier network environment.",
       "icon": "tech_lathe_life_support",
       "isDangerous": false,
       "isEvent": false,
@@ -1099,7 +1099,7 @@
       "key": "tech_lathe_life_support",
       "level": 0,
       "levels": 0,
-      "name": "$building_lathe_life_support$",
+      "name": "Synaptic Sustainer",
       "prerequisites": [],
       "sourceFile": "00_machine_age_tech.txt",
       "tier": 5,
@@ -1109,7 +1109,7 @@
       "area": "society",
       "category": "biology",
       "cost": 30000,
-      "description": "$building_lathe_preserver_desc$",
+      "description": "The organic components of the network are especially vulnerable to energetic fluctuations, which can cause rapid axonal degeneration. The Preserver strives to reduce these fluctuations to protect the Synaptic Lathe's frailer parts.",
       "icon": "tech_lathe_preserver",
       "isDangerous": false,
       "isEvent": false,
@@ -1122,7 +1122,7 @@
       "key": "tech_lathe_preserver",
       "level": 0,
       "levels": 0,
-      "name": "$building_lathe_preserver$",
+      "name": "Synaptic Preserver",
       "prerequisites": [],
       "sourceFile": "00_machine_age_tech.txt",
       "tier": 5,
@@ -1155,7 +1155,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$building_materiality_engine_desc$",
+      "description": "The psionic energy of the Shroud adjoins every point in the physical galaxy. The Materiality Engine exploits this interface, making it possible to reach across dimensions and materialize valuable components and resources.",
       "icon": "tech_materiality_engine",
       "isDangerous": false,
       "isEvent": false,
@@ -1168,7 +1168,7 @@
       "key": "tech_materiality_engine",
       "level": 0,
       "levels": 0,
-      "name": "$building_materiality_engine$",
+      "name": "Materiality Engine",
       "prerequisites": [],
       "sourceFile": "00_shroud_tech.txt",
       "tier": 3,
@@ -1191,7 +1191,7 @@
       "key": "tech_maulers",
       "level": 0,
       "levels": 0,
-      "name": "$mauler_class_plural_cap$",
+      "name": "Maulers",
       "prerequisites": [],
       "sourceFile": "00_biogenesis_tech.txt",
       "tier": 1,
@@ -1339,7 +1339,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "Psionic emanations from the Shroud bring an entity's favor into corporeal reality. An empire attuned to a Shroud patron will emit a $PSIONIC_AURA$ from where their psionic populations are concentrated.",
+      "description": "Psionic emanations from the Shroud bring an entity's favor into corporeal reality. An empire attuned to a Shroud patron will emit a Psionic Aura from where their psionic populations are concentrated.",
       "icon": "tech_psionic_aura",
       "isDangerous": false,
       "isEvent": false,
@@ -1352,7 +1352,7 @@
       "key": "tech_psionic_aura",
       "level": 0,
       "levels": 0,
-      "name": "$PSIONIC_AURA$",
+      "name": "Psionic Aura",
       "prerequisites": [],
       "sourceFile": "00_shroud_tech.txt",
       "tier": 3,
@@ -1914,7 +1914,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_xeno_tourism_agency_desc$",
+      "description": "This corporate agency promotes a wide variety of interstellar tourist attractions, as well as offering employment packages and signing bonuses to potential emigrants interested in relocating to corporate space.",
       "icon": "tech_xeno_tourism_agency",
       "isDangerous": false,
       "isEvent": false,
@@ -1937,7 +1937,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "These highly concentrated pellets of $zro_lower$ can be dispersed through enemy shields unabated, shifting through multiple realities. Once contact is made with a physical object, the effects are exponential in devastation.",
+      "description": "These highly concentrated pellets of zro can be dispersed through enemy shields unabated, shifting through multiple realities. Once contact is made with a physical object, the effects are exponential in devastation.",
       "icon": "tech_zro_launcher",
       "isDangerous": false,
       "isEvent": false,
@@ -1960,7 +1960,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "In a carefully controlled environment, we can incubate the $genetic_material$ collected from culled Space Fauna and produce new members of each species under our command.",
+      "description": "In a carefully controlled environment, we can incubate the Genetic Material collected from culled Space Fauna and produce new members of each species under our command.",
       "icon": "tech_alien_cloning",
       "isDangerous": false,
       "isEvent": false,
@@ -2310,7 +2310,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "Psionic emanations from the Shroud long to expand. With this new understanding, an empire's $PSIONIC_AURA_PLURAL$ can increase in intensity and spread throughout star systems, bringing benefits to allies and disadvantages to foes.",
+      "description": "Psionic emanations from the Shroud long to expand. With this new understanding, an empire's Psionic Auras can increase in intensity and spread throughout star systems, bringing benefits to allies and disadvantages to foes.",
       "icon": "tech_aura_intensification",
       "isDangerous": false,
       "isEvent": false,
@@ -2323,7 +2323,7 @@
       "key": "tech_aura_intensification",
       "level": 1,
       "levels": 0,
-      "name": "$PSIONIC_AURA$ Intensification",
+      "name": "Psionic Aura Intensification",
       "prerequisites": [
         "tech_psionic_aura"
       ],
@@ -2335,7 +2335,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "There is a way to project $PSIONIC_AURA_PLURAL$ beyond populated worlds. With the addition of an $sm_aura_emitter$, even a starbase can become a conduit for psionic emanations from the Shroud.",
+      "description": "There is a way to project Psionic Auras beyond populated worlds. With the addition of an Aura Emitter, even a starbase can become a conduit for psionic emanations from the Shroud.",
       "icon": "tech_aura_resonation",
       "isDangerous": false,
       "isEvent": false,
@@ -2360,7 +2360,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_bio_reactor_desc$",
+      "description": "A facility where organic matter is converted into energy at a highly efficient rate.",
       "icon": "tech_bio_reactor",
       "isDangerous": false,
       "isEvent": false,
@@ -2373,7 +2373,7 @@
       "key": "tech_bio_reactor",
       "level": 1,
       "levels": 0,
-      "name": "$building_bio_reactor$",
+      "name": "Bio-Reactor",
       "prerequisites": [
         "tech_industrial_farming"
       ],
@@ -2523,7 +2523,7 @@
       "key": "tech_covenant_composer",
       "level": 1,
       "levels": 0,
-      "name": "$COMPOSER_MARK$",
+      "name": "Mark of the Composer",
       "prerequisites": [
         "tech_psionic_theory"
       ],
@@ -2535,7 +2535,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_covenant_composer_desc$",
+      "description": "We have discovered how to let psionic energy flow through our ships. Armed with this knowledge, we can now imbue our vessels with the powers of our patron.",
       "icon": "tech_covenant_cradle",
       "isDangerous": false,
       "isEvent": false,
@@ -2548,7 +2548,7 @@
       "key": "tech_covenant_cradle",
       "level": 1,
       "levels": 0,
-      "name": "$CRADLE_MARK$",
+      "name": "Mark of the Cradle",
       "prerequisites": [
         "tech_psionic_theory"
       ],
@@ -2560,7 +2560,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_covenant_composer_desc$",
+      "description": "We have discovered how to let psionic energy flow through our ships. Armed with this knowledge, we can now imbue our vessels with the powers of our patron.",
       "icon": "tech_covenant_eater",
       "isDangerous": false,
       "isEvent": false,
@@ -2573,7 +2573,7 @@
       "key": "tech_covenant_eater",
       "level": 1,
       "levels": 0,
-      "name": "$EATER_MARK$",
+      "name": "Mark of the Eater",
       "prerequisites": [
         "tech_psionic_theory"
       ],
@@ -2585,7 +2585,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_covenant_composer_desc$",
+      "description": "We have discovered how to let psionic energy flow through our ships. Armed with this knowledge, we can now imbue our vessels with the powers of our patron.",
       "icon": "tech_covenant_instrument",
       "isDangerous": false,
       "isEvent": false,
@@ -2598,7 +2598,7 @@
       "key": "tech_covenant_instrument",
       "level": 1,
       "levels": 0,
-      "name": "$INSTRUMENT_MARK$",
+      "name": "Mark of the Instrument",
       "prerequisites": [
         "tech_psionic_theory"
       ],
@@ -2610,7 +2610,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_covenant_composer_desc$",
+      "description": "We have discovered how to let psionic energy flow through our ships. Armed with this knowledge, we can now imbue our vessels with the powers of our patron.",
       "icon": "tech_covenant_whisperers",
       "isDangerous": false,
       "isEvent": false,
@@ -2623,7 +2623,7 @@
       "key": "tech_covenant_whisperers",
       "level": 1,
       "levels": 0,
-      "name": "$WHISPERERS_MARK$",
+      "name": "Mark of the Whisperers",
       "prerequisites": [
         "tech_psionic_theory"
       ],
@@ -2760,7 +2760,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_fe_clinic_2_desc$",
+      "description": "The Bioregeneration Institute, at the pinnacle of medical technology, pioneers groundbreaking bio-regenerative therapies, continuously redefining the boundaries of life extension.",
       "icon": "tech_fe_clinic_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2773,7 +2773,7 @@
       "key": "tech_fe_clinic_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_clinic_2$",
+      "name": "Bioregeneration Institute",
       "prerequisites": [
         "tech_fe_clinic_1"
       ],
@@ -2785,7 +2785,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_dome_desc$",
+      "description": "Suspended by gravimetric nullification, these domes transcend physical limitations, while advanced life support systems seamlessly cater to inhabitants' needs.",
       "icon": "tech_fe_dome_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2798,7 +2798,7 @@
       "key": "tech_fe_dome_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_dome$",
+      "name": "Empyrean Dome",
       "prerequisites": [
         "tech_fe_dome_1"
       ],
@@ -2810,7 +2810,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_entertainment_2_desc$",
+      "description": "A colossal culmination of entertainment, this nexus transcends conventional limits, where dreams materialize before desires are realized.",
       "icon": "tech_fe_entertainment_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2823,7 +2823,7 @@
       "key": "tech_fe_entertainment_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_entertainment_2$",
+      "name": "Omni-Bliss Nexus",
       "prerequisites": [
         "tech_fe_entertainment_1"
       ],
@@ -2835,7 +2835,7 @@
       "area": "society",
       "category": "military_theory",
       "cost": 0,
-      "description": "$building_fe_stronghold_desc$",
+      "description": "This monumental planetary defense complex protects with countless armories and shielding; the planet's mountains will crumble before its defenses.",
       "icon": "tech_fe_fortress_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2848,7 +2848,7 @@
       "key": "tech_fe_fortress_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_stronghold$",
+      "name": "Aegis Complex",
       "prerequisites": [
         "tech_fe_fortress_1"
       ],
@@ -2860,7 +2860,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_market_2_desc$",
+      "description": "Reigning supreme in the galactic economy, the colossal spires of this trade district can be seen from orbit.",
       "icon": "tech_fe_market_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2873,7 +2873,7 @@
       "key": "tech_fe_market_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_market_2$",
+      "name": "Interstellar Commerce Nexus",
       "prerequisites": [
         "tech_fe_market_1"
       ],
@@ -2885,7 +2885,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_nourishment_center_desc$",
+      "description": "Every conceivable flavor can be replicated within these walls.",
       "icon": "tech_fe_nourishment_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2898,7 +2898,7 @@
       "key": "tech_fe_nourishment_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_nourishment_center$",
+      "name": "Nourishment Center",
       "prerequisites": [
         "tech_fe_nourishment_1"
       ],
@@ -2910,7 +2910,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_fe_security_2_desc$",
+      "description": "The zenith of legal institutions, this colossal edifice is a monument to justice, harboring courts, holding facilities, and correctional facilities that will redeem even the most hardened criminals.",
       "icon": "tech_fe_security_2",
       "isDangerous": true,
       "isEvent": false,
@@ -2923,7 +2923,7 @@
       "key": "tech_fe_security_2",
       "level": 1,
       "levels": 0,
-      "name": "$building_fe_security_2$",
+      "name": "Ziggurat of Justice",
       "prerequisites": [
         "tech_fe_security_1"
       ],
@@ -3061,7 +3061,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_hyper_entertainment_forum_desc$",
+      "description": "These massive entertainment complexes is where dreams come true. Shopping malls, restaurants, amusement parks, virtual arcades, and more. You dream it - we are it!",
       "icon": "tech_hyper_entertainment_forum",
       "isDangerous": false,
       "isEvent": false,
@@ -3086,7 +3086,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$interstellar_assembly_0_MEGASTRUCTURE_DETAILS$",
+      "description": "A meeting place for galactic powers, increasing immigration attraction and global opinion of us.",
       "icon": "tech_interstellar_assembly",
       "isDangerous": false,
       "isEvent": false,
@@ -3099,7 +3099,7 @@
       "key": "tech_interstellar_assembly",
       "level": 1,
       "levels": 0,
-      "name": "$interstellar_assembly_4$",
+      "name": "Interstellar Assembly",
       "prerequisites": [
         "tech_mega_engineering"
       ],
@@ -3211,7 +3211,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$mega_art_installation_0_MEGASTRUCTURE_DETAILS$",
+      "description": "An artistic beacon on a stellar scale, this installation inspires and represents the spirit of its creators.",
       "icon": "tech_mega_art",
       "isDangerous": false,
       "isEvent": false,
@@ -3224,7 +3224,7 @@
       "key": "tech_mega_art",
       "level": 1,
       "levels": 0,
-      "name": "$mega_art_installation_3$",
+      "name": "Mega Art Installation",
       "prerequisites": [
         "tech_mega_engineering"
       ],
@@ -3336,7 +3336,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_psionic_barrier_desc.1$ $INDIVIDUAL_PSIONIC_SPECIALISTS$$tech_psionic_barrier_desc.2$",
+      "description": "$tech_psionic_barrier_desc.1$ psionic specialists$tech_psionic_barrier_desc.2$",
       "icon": "tech_psionic_barrier",
       "isDangerous": false,
       "isEvent": false,
@@ -3361,7 +3361,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_psionic_shield_desc.1$ $INDIVIDUAL_PSIONIC_SPECIALISTS$$tech_psionic_shield_desc.2$",
+      "description": "$tech_psionic_shield_desc.1$ psionic specialists$tech_psionic_shield_desc.2$",
       "icon": "tech_psionic_shield",
       "isDangerous": false,
       "isEvent": false,
@@ -3561,7 +3561,7 @@
       "area": "society",
       "category": "military_theory",
       "cost": 0,
-      "description": "$strategic_coordination_center_0_MEGASTRUCTURE_DETAILS$",
+      "description": "A facility synchronizing the national Starbase network, augmenting defensive and offensive capabilities.",
       "icon": "tech_strategic_coordination",
       "isDangerous": false,
       "isEvent": false,
@@ -3574,7 +3574,7 @@
       "key": "tech_strategic_coordination",
       "level": 1,
       "levels": 0,
-      "name": "$strategic_coordination_center_3$",
+      "name": "Strategic Coordination Center",
       "prerequisites": [
         "tech_mega_engineering"
       ],
@@ -3699,7 +3699,7 @@
       "key": "tech_weavers",
       "level": 1,
       "levels": 0,
-      "name": "$weaver_class_plural_cap$",
+      "name": "Weavers",
       "prerequisites": [
         "tech_maulers"
       ],
@@ -3724,7 +3724,7 @@
       "key": "tech_wilderness_cluster",
       "level": 1,
       "levels": 0,
-      "name": "$tech_hive_cluster$",
+      "name": "Clustered Synapses",
       "prerequisites": [
         "tech_wilderness_node"
       ],
@@ -3761,7 +3761,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$building_bio_reactor_2_desc$",
+      "description": "A facility where organic matter is converted into energy at a highly efficient rate, improvements in waste collection allows harvesting of useful gaseous by-products.",
       "icon": "tech_bio_reactor_2",
       "isDangerous": false,
       "isEvent": false,
@@ -3774,7 +3774,7 @@
       "key": "tech_bio_reactor_2",
       "level": 2,
       "levels": 0,
-      "name": "$building_bio_reactor_2$",
+      "name": "Advanced Bio-Reactor",
       "prerequisites": [
         "tech_bio_reactor"
       ],
@@ -4274,7 +4274,7 @@
       "key": "tech_harbingers",
       "level": 2,
       "levels": 0,
-      "name": "$harbinger_class_plural_cap$",
+      "name": "Harbingers",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4386,7 +4386,7 @@
       "area": "society",
       "category": "psionics",
       "cost": 0,
-      "description": "$tech_mine_zro_desc.1$ $ORGANIC_INGESTED$ $tech_mine_zro_desc.2$ $individuals_key$$tech_mine_zro_desc.3$ $ORGANIC_DRUG$ $tech_mine_zro_desc.4$",
+      "description": "$tech_mine_zro_desc.1$ ingested $tech_mine_zro_desc.2$ individuals$tech_mine_zro_desc.3$ drug $tech_mine_zro_desc.4$",
       "icon": "tech_mine_zro",
       "isDangerous": false,
       "isEvent": false,
@@ -4786,7 +4786,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_1_DESC$",
+      "description": "Biologically enhanced projectiles are fired, countering evasive maneuvers and striking agile targets.",
       "icon": "tech_weaver_bio_anti_evasion_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4799,7 +4799,7 @@
       "key": "tech_weaver_bio_anti_evasion_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_1$",
+      "name": "Vector Lock Cannon",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4811,7 +4811,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_1_DESC$",
+      "description": "Launches organic projectiles that release specialized enzymes, interfering with enemy weapon reloading systems and reducing their rate of fire.",
       "icon": "tech_weaver_bio_anti_fire_rate_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4824,7 +4824,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_1$",
+      "name": "Reload Jammer",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4836,7 +4836,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_1_DESC$",
+      "description": "Organic projectiles imbued with destabilizing enzymes scramble enemy targeting systems and reduce their accuracy.",
       "icon": "tech_weaver_bio_confuser_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4849,7 +4849,7 @@
       "key": "tech_weaver_bio_confuser_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_1$",
+      "name": "Gloom Spores",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4861,7 +4861,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_1_DESC$",
+      "description": "Fires bio-projectiles that emit bursts of energy upon impact, subtly enhancing the maneuverability of our vessels.",
       "icon": "tech_weaver_bio_evasion_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4874,7 +4874,7 @@
       "key": "tech_weaver_bio_evasion_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_1$",
+      "name": "Energy Burster",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4886,7 +4886,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_1_DESC$",
+      "description": "Fires organic projectiles that emit energizing biofields, subtly increasing the firing speed of weapons systems.",
       "icon": "tech_weaver_bio_fire_rate_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4899,7 +4899,7 @@
       "key": "tech_weaver_bio_fire_rate_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_1$",
+      "name": "Weaver Biofield Generators",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -4911,7 +4911,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_1_DESC$",
+      "description": "Regenerative pods are launched to deliver strong healing compounds to allied ships.",
       "icon": "tech_weaver_bio_healing_1",
       "isDangerous": false,
       "isEvent": false,
@@ -4924,7 +4924,7 @@
       "key": "tech_weaver_bio_healing_1",
       "level": 2,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_1$",
+      "name": "Spore Launcher",
       "prerequisites": [
         "tech_weavers"
       ],
@@ -5465,7 +5465,7 @@
       "area": "society",
       "category": "statecraft",
       "cost": 0,
-      "description": "$building_galactic_stock_exchange_desc$",
+      "description": "By engaging in free trade of goods and services we allow for a more specialized economy, where an individual can excel in a narrow field and trade for their needs.",
       "icon": "tech_galactic_markets",
       "isDangerous": false,
       "isEvent": false,
@@ -5857,7 +5857,7 @@
       "key": "tech_stingers",
       "level": 3,
       "levels": 0,
-      "name": "$stinger_class_plural_cap$",
+      "name": "Stingers",
       "prerequisites": [
         "tech_harbingers"
       ],
@@ -5869,7 +5869,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_2_DESC$",
+      "description": "Fires refined projectiles with superior tracking enzymes and adaptive flight paths, increasing hit rates against fast-moving targets.",
       "icon": "tech_weaver_bio_anti_evasion_2",
       "isDangerous": false,
       "isEvent": false,
@@ -5882,7 +5882,7 @@
       "key": "tech_weaver_bio_anti_evasion_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_2$",
+      "name": "Enzymatic Webcaster",
       "prerequisites": [
         "tech_weaver_bio_anti_evasion_1"
       ],
@@ -5894,7 +5894,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_2_DESC$",
+      "description": "Enhances disruption enzymes to interfere more effectively with reloading cycles, significantly delaying enemy volleys.",
       "icon": "tech_weaver_bio_anti_fire_rate_2",
       "isDangerous": false,
       "isEvent": false,
@@ -5907,7 +5907,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_2$",
+      "name": "Fire Disrupter",
       "prerequisites": [
         "tech_weaver_bio_anti_fire_rate_1"
       ],
@@ -5919,7 +5919,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_2_DESC$",
+      "description": "Refined biological compounds disrupt targeting systems and short-range communications, sowing chaos among enemy ranks.",
       "icon": "tech_weaver_bio_confuser_2",
       "isDangerous": false,
       "isEvent": false,
@@ -5932,7 +5932,7 @@
       "key": "tech_weaver_bio_confuser_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_2$",
+      "name": "Tangle Pulse",
       "prerequisites": [
         "tech_weaver_bio_confuser_1"
       ],
@@ -5944,7 +5944,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_2_DESC$",
+      "description": "Releases concentrated bio-energetic fields, further boosting the evasion capabilities of our ships.",
       "icon": "tech_weaver_bio_evasion_2",
       "isDangerous": false,
       "isEvent": false,
@@ -5957,7 +5957,7 @@
       "key": "tech_weaver_bio_evasion_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_2$",
+      "name": "Tangler Pod Launcher",
       "prerequisites": [
         "tech_weaver_bio_evasion_1"
       ],
@@ -5969,7 +5969,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_2_DESC$",
+      "description": "Refined bio-munitions enhance biofield intensity, further accelerating the rate of fire.",
       "icon": "tech_weaver_bio_fire_rate_2",
       "isDangerous": false,
       "isEvent": false,
@@ -5982,7 +5982,7 @@
       "key": "tech_weaver_bio_fire_rate_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_2$",
+      "name": "Weaver Booster Blaster",
       "prerequisites": [
         "tech_weaver_bio_fire_rate_1"
       ],
@@ -5994,7 +5994,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_2_DESC$",
+      "description": "Highly efficient pods imbued with healing biomatter are deployed to rapidly repair damage across multiple vessels.",
       "icon": "tech_weaver_bio_healing_2",
       "isDangerous": false,
       "isEvent": false,
@@ -6007,7 +6007,7 @@
       "key": "tech_weaver_bio_healing_2",
       "level": 3,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_2$",
+      "name": "Improved Spore Launcher",
       "prerequisites": [
         "tech_weaver_bio_healing_1"
       ],
@@ -6057,7 +6057,7 @@
       "key": "tech_wilderness_confluence",
       "level": 3,
       "levels": 0,
-      "name": "$tech_hive_confluence$",
+      "name": "Confluence of Thought",
       "prerequisites": [
         "tech_wilderness_cluster",
         "tech_colonial_centralization"
@@ -6146,7 +6146,7 @@
       "area": "society",
       "category": "military_theory",
       "cost": 0,
-      "description": "$deep_space_citadel_0_MEGASTRUCTURE_DETAILS$",
+      "description": "A §YDeep Space Citadel§! is an armored Starbase designed for maximum defense within a stellar gravity well.",
       "icon": "tech_deep_space_citadel",
       "isDangerous": false,
       "isEvent": false,
@@ -6159,7 +6159,7 @@
       "key": "tech_deep_space_citadel",
       "level": 4,
       "levels": 0,
-      "name": "$dsc_name$",
+      "name": "Deep Space Citadel",
       "prerequisites": [
         "tech_starbase_3"
       ],
@@ -6525,7 +6525,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$FISSILE_CORES_DESC$",
+      "description": "Redundant thought centers allow for a Crystalline Entity to split itself in two as a final gambit to protect its clutch against a particularly dangerous foe.",
       "icon": "tech_unique_mutation_crystalline_entity",
       "isDangerous": false,
       "isEvent": false,
@@ -6538,7 +6538,7 @@
       "key": "tech_unique_mutation_crystalline_entity",
       "level": 4,
       "levels": 0,
-      "name": "$FISSILE_CORES$",
+      "name": "Fissile Cores",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6550,7 +6550,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$GASTRIC_FOUNTAIN_DESC$",
+      "description": "The powerful digestive system of a Cutholoid can be repurposed to fire kinetic projectiles at extremely high velocity.",
       "icon": "tech_unique_mutation_cutholoid",
       "isDangerous": false,
       "isEvent": false,
@@ -6563,7 +6563,7 @@
       "key": "tech_unique_mutation_cutholoid",
       "level": 4,
       "levels": 0,
-      "name": "$GASTRIC_FOUNTAIN$",
+      "name": "Gastric Fountain",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6575,7 +6575,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$RESTORATIVE_ENZYMES_DESC$",
+      "description": "On death, the Tiyanki Matriarch produces an assortment of protective chemicals in a final attempt to preserve the lives of her remaining kin.",
       "icon": "tech_unique_mutation_restorative_enzymes",
       "isDangerous": false,
       "isEvent": false,
@@ -6588,7 +6588,7 @@
       "key": "tech_unique_mutation_restorative_enzymes",
       "level": 4,
       "levels": 0,
-      "name": "$RESTORATIVE_ENZYMES$",
+      "name": "Restorative Enzymes",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6600,7 +6600,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$LEECHCRAFT_DESC$",
+      "description": "Modified Flagella spawn that siphon nutrients and materials from their prey in order to support the regeneration of their host Amoeba.",
       "icon": "tech_unique_mutation_space_amoeba",
       "isDangerous": false,
       "isEvent": false,
@@ -6613,7 +6613,7 @@
       "key": "tech_unique_mutation_space_amoeba",
       "level": 4,
       "levels": 0,
-      "name": "$LEECHCRAFT$",
+      "name": "Leechcraft",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6625,7 +6625,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$starborne_biology_desc$",
+      "description": "A main source of energy for large creatures in deep space comes from the power of starlight. The closer they are to brighter stars, the faster they develop.",
       "icon": "tech_unique_mutation_starborne_biology",
       "isDangerous": false,
       "isEvent": false,
@@ -6638,7 +6638,7 @@
       "key": "tech_unique_mutation_starborne_biology",
       "level": 4,
       "levels": 0,
-      "name": "$starborne_biology$",
+      "name": "Starborne Biology",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6650,7 +6650,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$HERDSONG_CHORDS_DESC$",
+      "description": "The somber song of the Tiyanki inspires its fellow creatures, hardening their resolve in combat.",
       "icon": "tech_unique_mutation_tiyanki",
       "isDangerous": false,
       "isEvent": false,
@@ -6663,7 +6663,7 @@
       "key": "tech_unique_mutation_tiyanki",
       "level": 4,
       "levels": 0,
-      "name": "$HERDSONG_CHORDS$",
+      "name": "Herdsong Chords",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6675,7 +6675,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$VIRULENT_CYSTS_DESC$",
+      "description": "Cysts filled with reproductive fluid allow for each Voidworm in a fertile Troika to independently produce spawn when bombarding an inhabited planet.",
       "icon": "tech_unique_mutation_voidworm",
       "isDangerous": false,
       "isEvent": false,
@@ -6688,7 +6688,7 @@
       "key": "tech_unique_mutation_voidworm",
       "level": 4,
       "levels": 0,
-      "name": "$VIRULENT_CYSTS$",
+      "name": "Virulent Cysts",
       "prerequisites": [
         "tech_controlled_mutations_2"
       ],
@@ -6700,7 +6700,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_3_DESC$",
+      "description": "Deploys self-guided bio-munitions that lock onto movement patterns, ensuring accuracy against elusive enemies.",
       "icon": "tech_weaver_bio_anti_evasion_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6713,7 +6713,7 @@
       "key": "tech_weaver_bio_anti_evasion_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_3$",
+      "name": "Seeker Shard Array",
       "prerequisites": [
         "tech_weaver_bio_anti_evasion_2"
       ],
@@ -6725,7 +6725,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_3_DESC$",
+      "description": "Deploys intelligent bio-projectiles that target critical reloading systems, creating cascading delays across enemy fleets.",
       "icon": "tech_weaver_bio_anti_fire_rate_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6738,7 +6738,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_3$",
+      "name": "Mind Missiles",
       "prerequisites": [
         "tech_weaver_bio_anti_fire_rate_2"
       ],
@@ -6750,7 +6750,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_3_DESC$",
+      "description": "Adaptive bio-munitions are deployed to exploit neural weaknesses in both organic and synthetic crews, crippling enemy efficiency.",
       "icon": "tech_weaver_bio_confuser_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6763,7 +6763,7 @@
       "key": "tech_weaver_bio_confuser_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_3$",
+      "name": "Neuro Scourge",
       "prerequisites": [
         "tech_weaver_bio_confuser_2"
       ],
@@ -6775,7 +6775,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_3_DESC$",
+      "description": "Launches intelligent bio-projectiles that adaptively enhance agility, ensuring superior evasion even in the most chaotic battles.",
       "icon": "tech_weaver_bio_evasion_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6788,7 +6788,7 @@
       "key": "tech_weaver_bio_evasion_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_3$",
+      "name": "Agile Spike Array",
       "prerequisites": [
         "tech_weaver_bio_evasion_2"
       ],
@@ -6800,7 +6800,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_3_DESC$",
+      "description": "Deploys adaptive bio-projectiles that amplify reaction times and system efficiency, enabling a significant increase in fire rate.",
       "icon": "tech_weaver_bio_fire_rate_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6813,7 +6813,7 @@
       "key": "tech_weaver_bio_fire_rate_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_3$",
+      "name": "Weaver Organo-Tech Amplifier",
       "prerequisites": [
         "tech_weaver_bio_fire_rate_2"
       ],
@@ -6825,7 +6825,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_3_DESC$",
+      "description": "Pods containing repair agents are launched, optimizing healing based on the severity of damage and ensuring no vulnerabilities remain.",
       "icon": "tech_weaver_bio_healing_3",
       "isDangerous": false,
       "isEvent": false,
@@ -6838,7 +6838,7 @@
       "key": "tech_weaver_bio_healing_3",
       "level": 4,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_3$",
+      "name": "Advanced Spore Launcher",
       "prerequisites": [
         "tech_weaver_bio_healing_2"
       ],
@@ -7051,7 +7051,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_4_DESC$",
+      "description": "Utilizes complex organic targeting systems that anticipate evasive actions, making even the most agile prey vulnerable.",
       "icon": "tech_weaver_bio_anti_evasion_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7064,7 +7064,7 @@
       "key": "tech_weaver_bio_anti_evasion_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_4$",
+      "name": "Pinion Accelerator",
       "prerequisites": [
         "tech_weaver_bio_anti_evasion_3"
       ],
@@ -7076,7 +7076,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_4_DESC$",
+      "description": "Utilizes adaptive biological compounds that degrade reloading mechanisms, halving the firing efficiency of even the most advanced weaponry.",
       "icon": "tech_weaver_bio_anti_fire_rate_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7089,7 +7089,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_4$",
+      "name": "Degradation Beams",
       "prerequisites": [
         "tech_weaver_bio_anti_fire_rate_3"
       ],
@@ -7101,7 +7101,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_4_DESC$",
+      "description": "Intelligent bio-projectiles emit disruptive fields on impact, scrambling enemy targeting systems and causing widespread malfunctions.",
       "icon": "tech_weaver_bio_confuser_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7114,7 +7114,7 @@
       "key": "tech_weaver_bio_confuser_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_4$",
+      "name": "Ruin Barbs",
       "prerequisites": [
         "tech_weaver_bio_confuser_3"
       ],
@@ -7126,7 +7126,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_4_DESC$",
+      "description": "Deploys advanced munitions that generate dynamic bio-electric auras, significantly improving the ability of ships to evade enemy fire.",
       "icon": "tech_weaver_bio_evasion_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7139,7 +7139,7 @@
       "key": "tech_weaver_bio_evasion_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_4$",
+      "name": "Electro Sprayer",
       "prerequisites": [
         "tech_weaver_bio_evasion_3"
       ],
@@ -7151,7 +7151,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_4_DESC$",
+      "description": "Generates dynamic bio-electric auras, vastly enhancing firing speed across multiple vessels, ensuring relentless pressure on enemy fleets.",
       "icon": "tech_weaver_bio_fire_rate_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7164,7 +7164,7 @@
       "key": "tech_weaver_bio_fire_rate_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_4$",
+      "name": "Weaver Aura Caster",
       "prerequisites": [
         "tech_weaver_bio_fire_rate_3"
       ],
@@ -7176,7 +7176,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_4_DESC$",
+      "description": "Pods that saturate the battlefield with adaptive spores provide smart healing to all allied vessels within range.",
       "icon": "tech_weaver_bio_healing_4",
       "isDangerous": false,
       "isEvent": false,
@@ -7189,7 +7189,7 @@
       "key": "tech_weaver_bio_healing_4",
       "level": 5,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_4$",
+      "name": "Adaptive Spore Launcher",
       "prerequisites": [
         "tech_weaver_bio_healing_3"
       ],
@@ -7277,7 +7277,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_5_DESC$",
+      "description": "Fires intelligent bio-projectiles equipped with predictive tracking, overcoming the most sophisticated evasion protocols.",
       "icon": "tech_weaver_bio_anti_evasion_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7290,7 +7290,7 @@
       "key": "tech_weaver_bio_anti_evasion_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_5$",
+      "name": "Prey Tracker",
       "prerequisites": [
         "tech_weaver_bio_anti_evasion_4"
       ],
@@ -7302,7 +7302,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_5_DESC$",
+      "description": "Fires advanced munitions that emit suppression fields, crippling enemy reloading systems and rendering them painfully slow.",
       "icon": "tech_weaver_bio_anti_fire_rate_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7315,7 +7315,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_5$",
+      "name": "Fiend Disabler",
       "prerequisites": [
         "tech_weaver_bio_anti_fire_rate_4"
       ],
@@ -7327,7 +7327,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_5_DESC$",
+      "description": "Advanced biological ordnance creates a cascading feedback loop within enemy systems, rendering their attacks wildly ineffective.",
       "icon": "tech_weaver_bio_confuser_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7340,7 +7340,7 @@
       "key": "tech_weaver_bio_confuser_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_5$",
+      "name": "Snare Darts",
       "prerequisites": [
         "tech_weaver_bio_confuser_4"
       ],
@@ -7352,7 +7352,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_5_DESC$",
+      "description": "Fires highly advanced projectiles that create large-scale enhancement fields, granting unparalleled evasion to fleets.",
       "icon": "tech_weaver_bio_evasion_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7365,7 +7365,7 @@
       "key": "tech_weaver_bio_evasion_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_5$",
+      "name": "Evasion Darts",
       "prerequisites": [
         "tech_weaver_bio_evasion_4"
       ],
@@ -7377,7 +7377,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_5_DESC$",
+      "description": "Unleashes hyper-charged bio-munitions that create large-scale enhancement fields, enabling fleets to unleash sustained, rapid-fire barrages.",
       "icon": "tech_weaver_bio_fire_rate_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7390,7 +7390,7 @@
       "key": "tech_weaver_bio_fire_rate_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_5$",
+      "name": "Weaver Swift Shooter",
       "prerequisites": [
         "tech_weaver_bio_fire_rate_4"
       ],
@@ -7402,7 +7402,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_5_DESC$",
+      "description": "Deploys pods that unleash a wave of intelligent microorganisms, capable of revitalizing even the most damaged fleets.",
       "icon": "tech_weaver_bio_healing_5",
       "isDangerous": false,
       "isEvent": false,
@@ -7415,7 +7415,7 @@
       "key": "tech_weaver_bio_healing_5",
       "level": 6,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_5$",
+      "name": "Intelligent Adaptive Spore Launcher",
       "prerequisites": [
         "tech_weaver_bio_healing_4"
       ],
@@ -7427,7 +7427,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_EVASION_GUN_6_DESC$",
+      "description": "Deploys bio-plasma rounds that adapt mid-flight, guaranteeing hits against even the most erratic maneuvers.",
       "icon": "tech_weaver_bio_anti_evasion_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7440,7 +7440,7 @@
       "key": "tech_weaver_bio_anti_evasion_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_ANTI_EVASION_GUN_6$",
+      "name": "Precision Lancer",
       "prerequisites": [
         "tech_weaver_bio_anti_evasion_5"
       ],
@@ -7452,7 +7452,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_ANTI_FIRE_RATE_GUN_6_DESC$",
+      "description": "Releases a biological pulse that locks down enemy reloading for extended periods.",
       "icon": "tech_weaver_bio_anti_fire_rate_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7465,7 +7465,7 @@
       "key": "tech_weaver_bio_anti_fire_rate_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_ANTI_FIRE_RATE_GUN_6$",
+      "name": "Tracker Stopper",
       "prerequisites": [
         "tech_weaver_bio_anti_fire_rate_5"
       ],
@@ -7477,7 +7477,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_CONFUSER_GUN_6_DESC$",
+      "description": "Bio-electromagnetic pulses incapacitate targeting systems and leave fleets in a state of disarray.",
       "icon": "tech_weaver_bio_confuser_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7490,7 +7490,7 @@
       "key": "tech_weaver_bio_confuser_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_CONFUSER_GUN_6$",
+      "name": "Havoc Storm",
       "prerequisites": [
         "tech_weaver_bio_confuser_5"
       ],
@@ -7502,7 +7502,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_EVASION_GUN_6_DESC$",
+      "description": "Fires bio-munitions that emit fields of adaptive energy, allowing fleets to dance effortlessly out of harm's way.",
       "icon": "tech_weaver_bio_evasion_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7515,7 +7515,7 @@
       "key": "tech_weaver_bio_evasion_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_EVASION_GUN_6$",
+      "name": "Adaptive Tendrils",
       "prerequisites": [
         "tech_weaver_bio_evasion_5"
       ],
@@ -7527,7 +7527,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_FIRE_RATE_GUN_6_DESC$",
+      "description": "Projects waves of bio-energy that push our weaponry to their peak performance, flooding the battlefield with devastating firepower.",
       "icon": "tech_weaver_bio_fire_rate_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7540,7 +7540,7 @@
       "key": "tech_weaver_bio_fire_rate_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_FIRE_RATE_GUN_6$",
+      "name": "Weaver Wave Maker",
       "prerequisites": [
         "tech_weaver_bio_fire_rate_5"
       ],
@@ -7552,7 +7552,7 @@
       "area": "society",
       "category": "biology",
       "cost": 0,
-      "description": "$BIO_HEALING_GUN_6_DESC$",
+      "description": "Pods filled with malleable cells are launched to trigger the growth of new hull tissues, pushing the endurance of organic vessels beyond their former limits.",
       "icon": "tech_weaver_bio_healing_6",
       "isDangerous": false,
       "isEvent": false,
@@ -7565,7 +7565,7 @@
       "key": "tech_weaver_bio_healing_6",
       "level": 7,
       "levels": 0,
-      "name": "$BIO_HEALING_GUN_6$",
+      "name": "Rebirth Spores",
       "prerequisites": [
         "tech_weaver_bio_healing_5"
       ],
