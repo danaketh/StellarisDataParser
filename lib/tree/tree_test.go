@@ -3,7 +3,7 @@ package tree
 import (
 	"testing"
 
-	"stellaris-research-tree/lib/models"
+	"stellaris-data-parser/lib/models"
 )
 
 func createTestTechnologies() map[string]*models.Technology {

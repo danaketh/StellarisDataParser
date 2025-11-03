@@ -1,22 +1,15 @@
-# Stellaris Research Tree Generator
+# Stellaris Data Parser
 
-A Go console application that parses Stellaris technology and localization files to generate an interactive, multilingual HTML visualization of the complete tech tree, showing dependencies and prerequisites.
+A Go console application that parses Stellaris technology and localization files to generate JSON data files and icons for use with Docusaurus or other web applications.
 
 ## Features
 
 - **Automated Parsing**: Reads Stellaris technology files in the game's native format
-- **Multilingual Support**: Includes all 10 official Stellaris languages with a language switcher
+- **English Localization**: Extracts English names and descriptions for all technologies
 - **Dependency Resolution**: Automatically builds the complete dependency tree
-- **Interactive Visualization**:
-  - **Language Switcher**: Change between English, French, German, Spanish, Japanese, Korean, Polish, Russian, Simplified Chinese, and Brazilian Portuguese
-  - Click on any technology to see its prerequisites and what it unlocks
-  - Hover over technologies to see full descriptions
-  - Filter by research area (Physics, Society, Engineering)
-  - Filter by tier
-  - Search technologies by name
-  - Toggle display of starting, rare, and dangerous technologies
-- **Beautiful UI**: Modern, space-themed interface with smooth animations
-- **Optimized Performance**: Separate JSON data files for faster loading
+- **JSON Export**: Generates structured JSON files organized by research area
+- **Icon Conversion**: Converts technology icons from DDS to PNG format
+- **Metadata Generation**: Exports research areas, tiers, categories, and tree depth
 
 ## Installation
 
@@ -29,13 +22,12 @@ A Go console application that parses Stellaris technology and localization files
 
 ```bash
 # Clone or download this repository
-cd StellarisResearchTree
+cd StellarisDataParser
 
 # Build the application
-go build -o stellaris-research-tree.exe
-
-# Or use the build script
 go build
+
+# This will create stellaris-data-parser.exe (Windows) or stellaris-data-parser (Linux/Mac)
 ```
 
 ## Usage
@@ -43,21 +35,26 @@ go build
 ### Basic Usage
 
 ```bash
-stellaris-research-tree -input "C:\Steam\steamapps\common\Stellaris"
+stellaris-data-parser -input "C:\Steam\steamapps\common\Stellaris"
 ```
 
-The tool will automatically detect the `common/technology/` and `localisation/` subdirectories.
+The tool will:
+1. Automatically detect the `common/technology/` subdirectory
+2. Parse all technology files
+3. Load English localization from `localisation/` subdirectory
+4. Generate JSON files in the `output/` directory
+5. Convert technology icons to PNG format
 
-### Custom Output File
+### Custom Output Directory
 
 ```bash
-stellaris-research-tree -input "C:\Steam\steamapps\common\Stellaris" -output my-tech-tree.html
+stellaris-data-parser -input "C:\Steam\steamapps\common\Stellaris" -output data
 ```
 
 ### Command-Line Flags
 
 - `-input` (required): Path to the Stellaris game root directory
-- `-output` (optional): Output HTML file path (default: `tech-tree.html`)
+- `-output` (optional): Output directory for JSON files and icons (default: `output`)
 - `-version`: Display version information
 - `-help`: Show help message
 
@@ -90,38 +87,81 @@ C:\Program Files\Paradox Interactive\Stellaris
 ~/Library/Application Support/Steam/steamapps/common/Stellaris
 ```
 
-## Example Output
+## Generated Output
 
-The generated HTML file displays:
+The tool generates the following files in the output directory:
 
-1. **Technology Cards** organized by dependency level
-2. **Color-coded badges** for:
-   - Starting technologies (green)
-   - Rare technologies (purple)
-   - Dangerous technologies (red)
-   - Research areas (blue/orange/teal)
-3. **Interactive features**:
-   - Click any tech to highlight its dependencies and dependents
-   - Golden border: Selected technology
-   - Green border: Prerequisites (what you need first)
-   - Pink border: Unlocks (what this enables)
+### JSON Data Files
+
+- **`research-physics.json`** - All physics research technologies
+- **`research-engineering.json`** - All engineering research technologies
+- **`research-society.json`** - All society research technologies
+- **`metadata.json`** - Research areas, tiers, categories, and max tree level
+
+### Icons Directory
+
+- **`icons/`** - Contains PNG versions of all technology icons
+
+### JSON Structure
+
+Each research JSON file contains:
+
+```json
+{
+  "area": "physics",
+  "technologies": [
+    {
+      "key": "tech_lasers_1",
+      "name": "Red Lasers",
+      "description": "Basic laser technology...",
+      "cost": 1000,
+      "area": "physics",
+      "tier": 1,
+      "level": 0,
+      "category": "particles",
+      "prerequisites": [],
+      "weight": 100,
+      "sourceFile": "00_phys_weapon_tech.txt",
+      "icon": "tech_lasers_1",
+      "isStartTech": false,
+      "isDangerous": false,
+      "isRare": false,
+      "isEvent": false,
+      "isReverse": false,
+      "isRepeatable": false,
+      "levels": 0,
+      "isGestalt": false,
+      "isMegacorp": false
+    }
+  ]
+}
+```
+
+The `metadata.json` file contains:
+
+```json
+{
+  "areas": ["physics", "engineering", "society"],
+  "tiers": [0, 1, 2, 3, 4, 5],
+  "categories": ["particles", "computing", "field_manipulation", ...],
+  "maxLevel": 8
+}
+```
 
 ## How It Works
 
-1. **Localization Parser** (`lib/localization`): Reads all Stellaris language files:
-   - Parses YAML localization files for all 10 languages
-   - Extracts technology names and descriptions
-   - Supports both versioned and non-versioned formats
+1. **Localization Parser** (`lib/localization`):
+   - Reads Stellaris YAML localization files
+   - Extracts English technology names and descriptions
    - Handles special characters and escape sequences
 
-2. **Technology Parser** (`lib/parser`): Reads Stellaris technology files (.txt) and extracts:
-   - Technology keys and metadata
-   - Research costs, tiers, and weights
-   - Prerequisites and dependencies
-   - Special flags (starting, rare, dangerous, event, reverse-engineerable)
-   - Empire type restrictions (gestalt, megacorp, machine empire, etc.)
-   - Weight modifiers and potential conditions
-   - Nested structures using recursive parsing
+2. **Technology Parser** (`lib/parser`):
+   - Reads Stellaris technology files (.txt)
+   - Extracts technology metadata (cost, tier, area, etc.)
+   - Parses prerequisites and dependencies
+   - Identifies special flags (starting, rare, dangerous, etc.)
+   - Handles empire type restrictions
+   - Supports nested structures using recursive parsing
 
 3. **Tree Builder** (`lib/tree`):
    - Constructs a dependency graph
@@ -129,12 +169,15 @@ The generated HTML file displays:
    - Organizes technologies by area, tier, and category
    - Identifies root nodes and dependency chains
 
-4. **HTML Generator** (`lib/generator`):
-   - Creates an interactive visualization with Tailwind CSS
-   - Exports technology data to separate JSON file
-   - Includes language switcher, filtering, search, and selection
-   - Generates lightweight HTML that loads data dynamically
-   - Stellaris-themed dark design with colored tech cards
+4. **JSON Generator** (`lib/generator`):
+   - Exports separate JSON files for each research area
+   - Generates metadata file with areas, tiers, and categories
+   - Embeds English names and descriptions directly in technology objects
+
+5. **Icon Converter** (`lib/generator/icons.go`):
+   - Locates technology icons in the game files
+   - Converts DDS format to PNG
+   - Organizes icons in the output directory
 
 ## Technology File Format
 
@@ -148,6 +191,8 @@ tech_example = {
     category = { particles }
     prerequisites = { "tech_prerequisite_1" "tech_prerequisite_2" }
     weight = 100
+    is_rare = yes
+    is_dangerous = yes
 }
 ```
 
@@ -156,22 +201,22 @@ tech_example = {
 ### Project Structure
 
 ```
-StellarisResearchTree/
+StellarisDataParser/
 ├── main.go                      # Application entry point
 ├── go.mod                       # Go module definition
 ├── lib/                         # Core packages
 │   ├── models/                  # Data structures
-│   │   └── technology.go        # Technology, Modifier, Condition, Localization models
+│   │   └── technology.go        # Technology, Modifier, Condition models
 │   ├── localization/            # Localization parsing
-│   │   └── localization.go      # YAML localization parser for all languages
+│   │   └── localization.go      # YAML localization parser
 │   ├── parser/                  # Parsing logic
-│   │   └── parser.go            # Stellaris file parser with nested structure support
+│   │   └── parser.go            # Stellaris file parser
 │   ├── tree/                    # Dependency tree
 │   │   └── tree.go              # Tech tree building and analysis
-│   └── generator/               # HTML generation
-│       └── generator.go         # HTML template and JSON export
+│   └── generator/               # JSON and icon generation
+│       ├── generator.go         # JSON export
+│       └── icons.go             # Icon conversion (DDS to PNG)
 ├── testdata/                    # Test fixtures
-├── sample_tech_files/           # Example technology files
 └── README.md                    # This file
 ```
 
@@ -181,16 +226,29 @@ StellarisResearchTree/
 go test ./...
 ```
 
-### Contributing
+### Using with Docusaurus
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+The generated JSON files are ready to be imported into a Docusaurus application:
+
+1. Copy the generated JSON files to your Docusaurus `static/data/` directory
+2. Copy the `icons/` directory to your Docusaurus `static/` directory
+3. Import and use the JSON data in your React components:
+
+```javascript
+import physicsData from '@site/static/data/research-physics.json';
+import metadata from '@site/static/data/metadata.json';
+
+// Access technology data
+const technologies = physicsData.technologies;
+const areas = metadata.areas;
+```
 
 ## Troubleshooting
 
 ### "No technologies found"
 
-- Ensure the input path points to the correct technology directory
-- Check that the directory contains `.txt` files
+- Ensure the input path points to the Stellaris game root directory
+- Check that `common/technology/` subdirectory exists
 - Verify you have read permissions for the directory
 
 ### "Unknown prerequisite" warnings
@@ -198,56 +256,49 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 - This is normal for modded games or incomplete tech trees
 - The tool will still generate output, skipping invalid prerequisites
 
-### HTML file doesn't display correctly
+### "No icons were converted"
 
-- Ensure you're using a modern browser (Chrome, Firefox, Edge, Safari)
-- Check that JavaScript is enabled
-- Open the HTML file directly (don't try to open it through a web server initially)
+- This warning appears when the game's `gfx/interface/icons/technologies/` directory is not found
+- Icons are optional - the JSON data will still be generated correctly
+- Make sure you're pointing to the game root directory, not a subdirectory
 
-## Improvements Based on Java Parser
+### Missing localization data
 
-This implementation incorporates features from the [stellaris-technology](https://github.com/BloodStainedCrow/stellaris-technology) Java parser:
+- If localization files aren't found, technology names will be auto-generated from keys
+- For example: `tech_lasers_1` becomes "Lasers 1"
+- Point to the game root directory to include localization
 
-1. **Enhanced Data Model**:
-   - Added `WeightModifier` and `Condition` structures
-   - Support for empire type restrictions
-   - Event and reverse-engineerable tech flags
-   - Feature unlocks tracking
+## Dependencies
 
-2. **Advanced Parsing**:
-   - Nested structure parsing for modifiers and conditions
-   - Recursive block parsing
-   - Support for arrays and complex data types
-   - Handles quoted strings, numbers, and booleans
-   - AND/OR/NOT logical operators in conditions
-
-3. **Modular Architecture**:
-   - Separated concerns into packages (models, parser, tree, generator)
-   - Clean interfaces between components
-   - Easier to test and extend
+- [github.com/lukegb/dds](https://github.com/lukegb/dds) - DDS image format decoder
 
 ## Version History
 
 ### v1.0.0
 - Initial release
 - Full technology parsing with nested structures
-- Multilingual support with 10 languages
-- Interactive HTML visualization with Tailwind CSS
-- Dynamic language switcher in web interface
-- Separate JSON data files for optimized loading
-- Filter, search, and prerequisite chain selection
+- English localization support
+- JSON export organized by research area
+- Metadata generation (areas, tiers, categories)
+- DDS to PNG icon conversion
 - Modular package architecture
-- Simplified command-line interface (game directory instead of subdirectories)
 - Auto-detection of technology and localization directories
-- Enhanced parser based on Java implementation
+- Optimized for Docusaurus integration
 
 ## License
 
-This project is for personal use and educational purposes. Stellaris and all related content are property of Paradox Interactive.
+This project is open source and available for personal use and educational purposes.
+
+### Copyright Notice
+
+**Stellaris Game Data**: All Stellaris game data, including technology definitions, localization text, icons, and other game assets, are the intellectual property of Paradox Development Studio and Paradox Interactive AB. This parser tool is designed to work with legally obtained copies of Stellaris and does not distribute any game content.
+
+**This Tool**: The Stellaris Data Parser source code is provided as-is for the community. Users must own a legitimate copy of Stellaris to use this tool, as it requires access to the game's data files.
+
+Stellaris © 2016-2025 Paradox Development Studio. Developed by Paradox Development Studio. Published by Paradox Interactive AB. STELLARIS and PARADOX INTERACTIVE are trademarks and/or registered trademarks of Paradox Interactive AB in Europe, the U.S., and other countries.
 
 ## Acknowledgments
 
 - Built for fans of Stellaris by Paradox Interactive
-- Inspired by the need for better tech tree planning tools
+- Inspired by the need for better tech tree visualization tools
 - Java parser reference: [BloodStainedCrow/stellaris-technology](https://github.com/BloodStainedCrow/stellaris-technology)
-- Original web visualizer: [turanar/stellaris-tech-tree](https://github.com/turanar/stellaris-tech-tree)

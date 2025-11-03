@@ -4,15 +4,12 @@
 *.dll
 *.so
 *.dylib
-stellaris-research-tree
-stellaris-research-tree.exe
 
 # Test binary
 *.test
 
 # Output
 *.out
-output/
 *.html
 *.json
 

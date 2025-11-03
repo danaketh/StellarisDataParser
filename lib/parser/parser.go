@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"stellaris-research-tree/lib/models"
+	"stellaris-data-parser/lib/models"
 )
 
 // TechParser handles parsing of Stellaris technology files
@@ -210,6 +210,12 @@ func (p *TechParser) parseTechnologyBlock(key, content string) *models.Technolog
 	}
 	if gateway, ok := data["gateway"].(string); ok {
 		tech.Gateway = gateway
+	}
+	if icon, ok := data["icon"].(string); ok {
+		tech.Icon = icon
+	} else {
+		// Default to technology key if no icon specified
+		tech.Icon = key
 	}
 
 	// Array fields

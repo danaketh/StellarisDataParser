@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"stellaris-research-tree/lib/models"
-	"stellaris-research-tree/lib/tree"
+	"stellaris-data-parser/lib/models"
+	"stellaris-data-parser/lib/tree"
 )
 
 func createTestTree() *tree.TechTree {
@@ -47,9 +47,9 @@ func createTestTree() *tree.TechTree {
 	return tree.NewTechTree(technologies)
 }
 
-func TestNewHTMLGenerator(t *testing.T) {
+func TestNewJSONGenerator(t *testing.T) {
 	testTree := createTestTree()
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	if generator == nil {
 		t.Fatal("Expected generator to be created, got nil")
@@ -58,55 +58,19 @@ func TestNewHTMLGenerator(t *testing.T) {
 	if generator.tree == nil {
 		t.Error("Expected tree to be set")
 	}
-
-	if generator.template == nil {
-		t.Error("Expected template to be initialized")
-	}
 }
 
 func TestGenerate(t *testing.T) {
 	testTree := createTestTree()
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	// Create temp directory for output files
 	tmpDir := t.TempDir()
-	tmpFile := tmpDir + "/test_output.html"
 
-	// Generate HTML and JSON files
-	err := generator.Generate(tmpFile)
+	// Generate JSON files
+	err := generator.Generate(tmpDir)
 	if err != nil {
-		t.Fatalf("Failed to generate HTML: %v", err)
-	}
-
-	// Read generated HTML file
-	content, err := os.ReadFile(tmpFile)
-	if err != nil {
-		t.Fatalf("Failed to read generated file: %v", err)
-	}
-
-	contentStr := string(content)
-
-	// Verify HTML structure
-	if !strings.Contains(contentStr, "<!DOCTYPE html>") {
-		t.Error("Expected HTML doctype declaration")
-	}
-
-	if !strings.Contains(contentStr, "<html") {
-		t.Error("Expected HTML tag")
-	}
-
-	if !strings.Contains(contentStr, "Stellaris Technology Tree") {
-		t.Error("Expected page title")
-	}
-
-	// Verify Tailwind CSS is included
-	if !strings.Contains(contentStr, "tailwindcss.com") {
-		t.Error("Expected Tailwind CSS CDN")
-	}
-
-	// Verify fetch call is present
-	if !strings.Contains(contentStr, "fetch") {
-		t.Error("Expected fetch call to load JSON data")
+		t.Fatalf("Failed to generate JSON: %v", err)
 	}
 
 	// Verify JSON files were created
@@ -115,20 +79,15 @@ func TestGenerate(t *testing.T) {
 		t.Error("Expected metadata.json to be created")
 	}
 
-	localizationsFile := tmpDir + "/localizations.json"
-	if _, err := os.Stat(localizationsFile); os.IsNotExist(err) {
-		t.Error("Expected localizations.json to be created")
-	}
-
 	// Verify area-specific JSON files
-	physicsFile := tmpDir + "/technologies-physics.json"
+	physicsFile := tmpDir + "/research-physics.json"
 	if _, err := os.Stat(physicsFile); os.IsNotExist(err) {
-		t.Error("Expected technologies-physics.json to be created")
+		t.Error("Expected research-physics.json to be created")
 	}
 
-	engineeringFile := tmpDir + "/technologies-engineering.json"
+	engineeringFile := tmpDir + "/research-engineering.json"
 	if _, err := os.Stat(engineeringFile); os.IsNotExist(err) {
-		t.Error("Expected technologies-engineering.json to be created")
+		t.Error("Expected research-engineering.json to be created")
 	}
 
 	// Read and verify physics JSON file
@@ -160,11 +119,11 @@ func TestGenerate(t *testing.T) {
 
 func TestGenerateJSONFiles(t *testing.T) {
 	testTree := createTestTree()
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	tmpDir := t.TempDir()
 
-	err := generator.GenerateJSONFiles(tmpDir, "test")
+	err := generator.GenerateJSONFiles(tmpDir)
 	if err != nil {
 		t.Fatalf("Failed to generate JSON files: %v", err)
 	}
@@ -210,14 +169,9 @@ func TestGenerateJSONFiles(t *testing.T) {
 		t.Errorf("Expected non-negative max level, got %f", maxLevel)
 	}
 
-	// Check localizations file exists
-	if _, err := os.Stat(tmpDir + "/localizations.json"); os.IsNotExist(err) {
-		t.Error("Expected localizations.json to be created")
-	}
-
 	// Check technology area files exist
-	if _, err := os.Stat(tmpDir + "/technologies-physics.json"); os.IsNotExist(err) {
-		t.Error("Expected technologies-physics.json to be created")
+	if _, err := os.Stat(tmpDir + "/research-physics.json"); os.IsNotExist(err) {
+		t.Error("Expected research-physics.json to be created")
 	}
 }
 
@@ -270,18 +224,17 @@ func TestGenerateWithComplexTech(t *testing.T) {
 	}
 
 	testTree := tree.NewTechTree(technologies)
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	tmpDir := t.TempDir()
-	tmpFile := tmpDir + "/test_complex.html"
 
-	err := generator.Generate(tmpFile)
+	err := generator.Generate(tmpDir)
 	if err != nil {
-		t.Fatalf("Failed to generate HTML: %v", err)
+		t.Fatalf("Failed to generate JSON: %v", err)
 	}
 
 	// Verify society JSON file was created and contains complex properties
-	jsonFile := tmpDir + "/technologies-society.json"
+	jsonFile := tmpDir + "/research-society.json"
 	jsonContent, err := os.ReadFile(jsonFile)
 	if err != nil {
 		t.Fatalf("Failed to read JSON file: %v", err)
@@ -305,7 +258,7 @@ func TestGenerateWithComplexTech(t *testing.T) {
 
 func TestGenerateInvalidPath(t *testing.T) {
 	testTree := createTestTree()
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	// Try to generate to an invalid path
 	err := generator.Generate("/invalid/path/that/does/not/exist/output.html")
@@ -316,17 +269,17 @@ func TestGenerateInvalidPath(t *testing.T) {
 
 func TestTechnologyFieldsInJSON(t *testing.T) {
 	testTree := createTestTree()
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	tmpDir := t.TempDir()
 
-	err := generator.GenerateJSONFiles(tmpDir, "test")
+	err := generator.GenerateJSONFiles(tmpDir)
 	if err != nil {
 		t.Fatalf("Failed to generate JSON files: %v", err)
 	}
 
 	// Read physics technologies file
-	content, err := os.ReadFile(tmpDir + "/technologies-physics.json")
+	content, err := os.ReadFile(tmpDir + "/research-physics.json")
 	if err != nil {
 		t.Fatalf("Failed to read technologies file: %v", err)
 	}
@@ -364,27 +317,17 @@ func TestTechnologyFieldsInJSON(t *testing.T) {
 func TestEmptyTreeGeneration(t *testing.T) {
 	technologies := make(map[string]*models.Technology)
 	testTree := tree.NewTechTree(technologies)
-	generator := NewHTMLGenerator(testTree)
+	generator := NewJSONGenerator(testTree)
 
 	tmpDir := t.TempDir()
-	tmpFile := tmpDir + "/test_empty.html"
 
-	err := generator.Generate(tmpFile)
+	err := generator.Generate(tmpDir)
 	if err != nil {
-		t.Fatalf("Failed to generate HTML for empty tree: %v", err)
+		t.Fatalf("Failed to generate JSON for empty tree: %v", err)
 	}
 
-	// Verify HTML file was created
-	if _, err := os.Stat(tmpFile); os.IsNotExist(err) {
-		t.Error("Expected HTML file to be created")
-	}
-
-	// Verify metadata and localizations files were created
+	// Verify metadata file was created
 	if _, err := os.Stat(tmpDir + "/metadata.json"); os.IsNotExist(err) {
 		t.Error("Expected metadata.json file to be created")
-	}
-
-	if _, err := os.Stat(tmpDir + "/localizations.json"); os.IsNotExist(err) {
-		t.Error("Expected localizations.json file to be created")
 	}
 }

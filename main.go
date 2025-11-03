@@ -3,17 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
-	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 
-	"stellaris-research-tree/lib/generator"
-	"stellaris-research-tree/lib/localization"
-	"stellaris-research-tree/lib/models"
-	"stellaris-research-tree/lib/parser"
-	"stellaris-research-tree/lib/tree"
+	"stellaris-data-parser/lib/generator"
+	"stellaris-data-parser/lib/localization"
+	"stellaris-data-parser/lib/parser"
+	"stellaris-data-parser/lib/tree"
 )
 
 const (
@@ -23,8 +20,7 @@ const (
 func main() {
 	// Define command-line flags
 	gameDir := flag.String("input", "", "Path to Stellaris game directory (required)")
-	outputFile := flag.String("output", "tech-tree.html", "Output HTML file path")
-	servePort := flag.String("serve", "", "Start HTTP server on specified port (e.g., :8080)")
+	outputDir := flag.String("output", "output", "Output directory for JSON files and icons")
 	showVersion := flag.Bool("version", false, "Show version information")
 	showHelp := flag.Bool("help", false, "Show help message")
 
@@ -32,7 +28,7 @@ func main() {
 
 	// Handle version flag
 	if *showVersion {
-		fmt.Printf("Stellaris Research Tree Generator v%s\n", version)
+		fmt.Printf("Stellaris Data Parser v%s\n", version)
 		os.Exit(0)
 	}
 
@@ -69,7 +65,7 @@ func main() {
 	}
 
 	fmt.Println("╔════════════════════════════════════════════════╗")
-	fmt.Println("║   Stellaris Research Tree Generator v1.0.0    ║")
+	fmt.Println("║      Stellaris Data Parser v1.0.0              ║")
 	fmt.Println("╚════════════════════════════════════════════════╝")
 	fmt.Println()
 
@@ -94,8 +90,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Parse localization files
-	fmt.Println("\n🌍 Loading localization data...")
+	// Parse localization files (English only)
+	fmt.Println("\n🌍 Loading English localization data...")
 	locParser := localization.NewLocalizationParser()
 
 	if _, err := os.Stat(localizationDir); err == nil {
@@ -104,24 +100,18 @@ func main() {
 			fmt.Printf("⚠ Warning: Failed to parse localization files: %v\n", err)
 			fmt.Println("   Continuing without localization data...")
 		} else {
-			languages := locParser.GetAvailableLanguages()
-			fmt.Printf("✓ Loaded %d languages: %v\n", len(languages), languages)
-
-			// Add localization data to technologies
+			// Add English localization data directly to technologies
 			for key, tech := range technologies {
-				tech.Localizations = make(map[string]models.TechLocalization)
-				for _, lang := range languages {
-					name := locParser.GetLocalizedName(key, lang)
-					desc := locParser.GetLocalizedDescription(key, lang)
-					if name != "" || desc != "" {
-						tech.Localizations[lang] = models.TechLocalization{
-							Name:        name,
-							Description: desc,
-						}
-					}
+				name := locParser.GetLocalizedName(key, "english")
+				desc := locParser.GetLocalizedDescription(key, "english")
+				if name != "" {
+					tech.Name = name
+				}
+				if desc != "" {
+					tech.Description = desc
 				}
 			}
-			fmt.Printf("✓ Added localization data to technologies\n")
+			fmt.Printf("✓ Added English localization to technologies\n")
 		}
 	} else {
 		fmt.Printf("⚠ Warning: Localization directory not found: %s\n", localizationDir)
@@ -146,50 +136,47 @@ func main() {
 		fmt.Printf("✓ Technology tiers: %v\n", tiers)
 	}
 
-	// Generate HTML output
-	fmt.Printf("\n🎨 Generating HTML visualization...\n")
-	htmlGenerator := generator.NewHTMLGenerator(techTree)
+	// Generate JSON output
+	fmt.Printf("\n📊 Generating JSON data files...\n")
+	jsonGenerator := generator.NewJSONGenerator(techTree)
+	jsonGenerator.SetGameDir(*gameDir) // Set game directory for icon extraction
 
 	// Resolve output path
-	absOutputPath, err := filepath.Abs(*outputFile)
+	absOutputPath, err := filepath.Abs(*outputDir)
 	if err != nil {
-		absOutputPath = *outputFile
+		absOutputPath = *outputDir
 	}
 
-	if err := htmlGenerator.Generate(absOutputPath); err != nil {
-		fmt.Printf("❌ Error generating HTML: %v\n", err)
+	// Create output directory if it doesn't exist
+	if err := os.MkdirAll(absOutputPath, 0755); err != nil {
+		fmt.Printf("❌ Error creating output directory: %v\n", err)
 		os.Exit(1)
 	}
 
-	outputDir := filepath.Dir(absOutputPath)
+	if err := jsonGenerator.Generate(absOutputPath); err != nil {
+		fmt.Printf("❌ Error generating JSON files: %v\n", err)
+		os.Exit(1)
+	}
 
-	fmt.Printf("✓ HTML file created: %s\n", absOutputPath)
-	fmt.Printf("✓ JSON data files created in: %s\n", outputDir)
-	fmt.Println("  - localizations.json (language data)")
+	fmt.Printf("✓ JSON data files created in: %s\n", absOutputPath)
 	fmt.Println("  - metadata.json (areas, tiers, categories)")
 
 	// List technology files by area
 	if len(areas) > 0 {
 		for _, area := range areas {
-			fmt.Printf("  - technologies-%s.json\n", strings.ToLower(area))
+			fmt.Printf("  - research-%s.json\n", strings.ToLower(area))
 		}
 	}
 
-	fmt.Println("\n✨ Success! Open the HTML file in your browser to view the tech tree.")
-	fmt.Println("   Note: Keep all JSON files in the same directory as the HTML file.")
-
-	// Start HTTP server if requested
-	if *servePort != "" {
-		startServer(*servePort, outputDir)
-	}
+	fmt.Println("\n✨ Success! JSON files ready for use with Docusaurus.")
 }
 
 func printHelp() {
-	fmt.Println("Stellaris Research Tree Generator")
-	fmt.Println("Parses Stellaris technology and localization files to generate an interactive HTML tech tree.")
+	fmt.Println("Stellaris Data Parser")
+	fmt.Println("Parses Stellaris technology and localization files to generate JSON data and icons for Docusaurus.")
 	fmt.Println()
 	fmt.Println("Usage:")
-	fmt.Println("  stellaris-research-tree -input <game_directory> [-output <path>]")
+	fmt.Println("  stellaris-data-parser -input <game_directory> [-output <directory>]")
 	fmt.Println()
 	fmt.Println("Flags:")
 	fmt.Println("  -input string")
@@ -197,11 +184,7 @@ func printHelp() {
 	fmt.Println("        Example: C:\\Steam\\steamapps\\common\\Stellaris")
 	fmt.Println()
 	fmt.Println("  -output string")
-	fmt.Println("        Output HTML file path (default: tech-tree.html)")
-	fmt.Println()
-	fmt.Println("  -serve string")
-	fmt.Println("        Start HTTP server on specified port after generation")
-	fmt.Println("        Example: -serve :8080 or -serve 8080")
+	fmt.Println("        Output directory for JSON files and icons (default: output)")
 	fmt.Println()
 	fmt.Println("  -version")
 	fmt.Println("        Show version information")
@@ -210,41 +193,18 @@ func printHelp() {
 	fmt.Println("        Show this help message")
 	fmt.Println()
 	fmt.Println("Examples:")
-	fmt.Println("  # Generate tech tree from Stellaris installation")
-	fmt.Println("  stellaris-research-tree -input \"C:\\Steam\\steamapps\\common\\Stellaris\"")
+	fmt.Println("  # Generate data from Stellaris installation")
+	fmt.Println("  stellaris-data-parser -input \"C:\\Steam\\steamapps\\common\\Stellaris\"")
 	fmt.Println()
-	fmt.Println("  # Specify custom output file")
-	fmt.Println("  stellaris-research-tree -input \"C:\\Steam\\steamapps\\common\\Stellaris\" -output stellaris-tree.html")
-	fmt.Println()
-	fmt.Println("  # Generate and serve on HTTP server")
-	fmt.Println("  stellaris-research-tree -input \"C:\\Steam\\steamapps\\common\\Stellaris\" -serve :8080")
+	fmt.Println("  # Specify custom output directory")
+	fmt.Println("  stellaris-data-parser -input \"C:\\Steam\\steamapps\\common\\Stellaris\" -output data")
 	fmt.Println()
 	fmt.Println("Notes:")
 	fmt.Println("  - Point -input to the Stellaris game root directory")
 	fmt.Println("  - The tool will automatically find common/technology/ and localisation/ subdirectories")
 	fmt.Println("  - Default Stellaris path: <Steam>\\steamapps\\common\\Stellaris")
-	fmt.Println("  - Generates two files: HTML and JSON data file")
-	fmt.Println("  - Supports 10 languages with a language switcher in the web interface")
-	fmt.Println("  - Keep both output files in the same directory for the visualization to work")
-}
-
-func startServer(port, dir string) {
-	// Ensure port starts with ":"
-	if !strings.HasPrefix(port, ":") {
-		port = ":" + port
-	}
-
-	// Create file server for the output directory
-	fs := http.FileServer(http.Dir(dir))
-	http.Handle("/", fs)
-
-	fmt.Printf("\n🌐 Starting HTTP server on http://localhost%s\n", port)
-	fmt.Printf("   Serving files from: %s\n", dir)
-	fmt.Println("   Press Ctrl+C to stop the server")
-	fmt.Println()
-
-	// Start the server
-	if err := http.ListenAndServe(port, nil); err != nil {
-		log.Fatalf("Failed to start server: %v\n", err)
-	}
+	fmt.Println("  - Generates JSON files for each research area (Physics, Engineering, Society)")
+	fmt.Println("  - Each technology includes English name and description")
+	fmt.Println("  - Generates metadata.json with areas, tiers, and categories")
+	fmt.Println("  - Converts technology icons from DDS to PNG format")
 }

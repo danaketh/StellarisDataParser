@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"stellaris-research-tree/lib/models"
+	"stellaris-data-parser/lib/models"
 )
 
 // TechNode represents a node in the technology tree
@@ -90,11 +90,6 @@ func (t *TechTree) calculateLevels() {
 		node := queue[0]
 		queue = queue[1:]
 
-		if node.Visited {
-			continue
-		}
-		node.Visited = true
-
 		// Calculate level as max of all dependencies + 1
 		maxDepLevel := -1
 		allDepsVisited := true
@@ -114,6 +109,12 @@ func (t *TechTree) calculateLevels() {
 			continue
 		}
 
+		// Skip if already processed
+		if node.Visited {
+			continue
+		}
+
+		node.Visited = true
 		node.Level = maxDepLevel + 1
 		if node.Level > t.maxLevel {
 			t.maxLevel = node.Level

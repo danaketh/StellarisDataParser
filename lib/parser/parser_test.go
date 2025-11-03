@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"stellaris-research-tree/lib/models"
+	"stellaris-data-parser/lib/models"
 )
 
 func TestNewTechParser(t *testing.T) {
@@ -28,7 +28,7 @@ func TestParseDirectory(t *testing.T) {
 	parser := NewTechParser()
 
 	// Get the testdata path relative to the project root
-	testdataPath, err := filepath.Abs("../../testdata")
+	testdataPath, err := filepath.Abs("../../testdata/common/technology")
 	if err != nil {
 		t.Fatalf("Failed to get testdata path: %v", err)
 	}
@@ -53,7 +53,7 @@ func TestParseDirectory(t *testing.T) {
 func TestParseFile(t *testing.T) {
 	parser := NewTechParser()
 
-	testdataPath, err := filepath.Abs("../../testdata/00_sample_physics.txt")
+	testdataPath, err := filepath.Abs("../../testdata/common/technology/00_sample_physics.txt")
 	if err != nil {
 		t.Fatalf("Failed to get testdata path: %v", err)
 	}
@@ -115,7 +115,7 @@ func TestParseFile(t *testing.T) {
 func TestParseComplexTech(t *testing.T) {
 	parser := NewTechParser()
 
-	testdataPath, err := filepath.Abs("../../testdata/00_complex_tech.txt")
+	testdataPath, err := filepath.Abs("../../testdata/common/technology/00_complex_tech.txt")
 	if err != nil {
 		t.Fatalf("Failed to get testdata path: %v", err)
 	}

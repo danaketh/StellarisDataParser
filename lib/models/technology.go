@@ -13,6 +13,7 @@ type Technology struct {
 	Weight        int
 	BaseWeight    float64
 	SourceFile    string // The filename this technology was parsed from
+	Icon          string // Icon filename (without extension), defaults to tech key if not specified
 	IsStartTech   bool
 	IsDangerous   bool
 	IsRare        bool
@@ -30,17 +31,9 @@ type Technology struct {
 	FeatureUnlocks   []string
 	WeightModifiers  []WeightModifier
 	Potential        *Condition
-	AIUpdateType     string
-	Gateway          string
-	IsReverse        bool
-	// Localization data - map of language code to translations
-	Localizations map[string]TechLocalization
-}
-
-// TechLocalization stores localized name and description for a technology
-type TechLocalization struct {
-	Name        string
-	Description string
+	AIUpdateType string
+	Gateway      string
+	IsReverse    bool
 }
 
 // WeightModifier represents a modifier that affects technology weight
