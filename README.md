@@ -246,6 +246,17 @@ const technologies = physicsData.technologies;
 const areas = metadata.areas;
 ```
 
+### Automatic Deployment with GitHub Actions
+
+GitHub Actions workflows are included to automatically trigger builds in another repository when changes are pushed.
+
+**Quick Setup:**
+
+1. Create a Personal Access Token (PAT) with `repo` and `workflow` scopes
+2. Add the PAT as a secret named `REMOTE_REPO_TOKEN` in this repository
+3. Edit `.github/workflows/trigger-remote-build.yml` to specify your target repository
+4. Push changes to the `main` branch to trigger the remote build
+
 ## Troubleshooting
 
 ### "No technologies found"

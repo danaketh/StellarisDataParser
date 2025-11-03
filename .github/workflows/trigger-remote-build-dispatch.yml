@@ -1,0 +1,32 @@
+name: Trigger Remote Repository Build (Repository Dispatch)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'output/**'
+      - 'lib/**'
+      - 'main.go'
+      - 'go.mod'
+      - 'go.sum'
+
+jobs:
+  trigger-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.REMOTE_REPO_TOKEN }}
+          repository: danaketh/StellarisWiki
+          event-type: trigger-build
+          client-payload: |
+            {
+              "source_repo": "${{ github.repository }}",
+              "source_ref": "${{ github.ref }}",
+              "source_sha": "${{ github.sha }}",
+              "commit_message": "${{ github.event.head_commit.message }}",
+              "commit_author": "${{ github.event.head_commit.author.name }}"
+            }
